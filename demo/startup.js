@@ -171,7 +171,13 @@ exports.launch = function(env) {
     };
     showHiddenEl.onclick = setShowInvisibles;
     setShowInvisibles();
-
+    
+    var setFocusEl = document.getElementById("set_focus");
+    if (setFocusEl) {
+        setFocusEl.onclick = function(){
+            env.editor.textInput.focus();
+        }
+    }
 
     // for debugging
     window.jump = function() {
